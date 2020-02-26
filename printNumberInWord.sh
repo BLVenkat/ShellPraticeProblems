@@ -4,12 +4,14 @@
 #!/bin/bash -x
 
 read -p " Enter single digit number :- " number
-if [ $number -eq 0 ]
+numberPattern="^[0-9]$"
+
+if ! [[ $numberPattern =~ $number ]]
+then
+	echo "Enter valid number"
+elif [ $number -eq 0 ]
 then
 	echo "Zero"
-elif [ $number -eq 1 ]
-then
-	echo "One"
 elif [ $number -eq 1 ]
 then
 	echo "One"
@@ -37,6 +39,5 @@ then
 elif [ $number -eq 9 ]
 then
 	echo "Nine"
-else
-	echo "Enter single digit number"
+
 fi
