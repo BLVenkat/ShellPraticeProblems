@@ -4,10 +4,10 @@
 #!/bin/bash -x
 
 read -p " Enter single digit number :- " number
-if [[ $number -eq 0 ]]
+if [ $number -eq 0 ]
 then
 	echo "Zero"
-elif [[ $number -eq 1 ]]
+elif [ $number -eq 1 ]
 then
 	echo "One"
 elif [ $number -eq 1 ]
