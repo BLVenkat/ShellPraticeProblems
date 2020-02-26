@@ -9,7 +9,7 @@ lowerLimit=0
 upperLimit=100
 magicNum=50
 
-read -p "Think of a magic number in a range of 0-100 and press any key!"
+read -p "Think of a magic number in a range of $lowerLimit-$upperLimit and press any key!"
 
 while [[ $lowerLimit -lt $upperLimit ]]
 do
