@@ -3,7 +3,7 @@
 #  if day of month is between March 20 and June 20, false otherwise.
 
 # Input :- Take Day and Month as Commandline Argument.
-# Logic/operation   :- Use if else to print True or False.
+# Logic/operation   :- Use if else to check date between March 20 and June 20.
 # Output            :- Print True or False. 
 # file		  :- summerSeason.sh
 
