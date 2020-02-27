@@ -12,6 +12,7 @@ NO=N
 lowerLimit=0
 upperLimit=100
 magicNum=$(( $(( $lowerLimit + $upperLimit )) / 2 ))
+totalQuestions=0
 
 read -p "Think of a magic number in a range of $lowerLimit-$upperLimit and press any key!"
 
@@ -28,9 +29,12 @@ do
 		upperLimit=$magicNum
 	else
 		echo "Invalid Input! Please try again..."
+		continue
 	fi
 
 	magicNum=$(( $(( $lowerLimit + $upperLimit )) / 2 ))
+	(( totalQuestions++ ))
 done
 
 echo "The Magic Number is : $magicNum"
+echo "You've got your magic number in $totalQuestions simple questions!"
