@@ -1,4 +1,7 @@
 #Problem statement :- Read a single digit number and write the number in word.
+#Input				 :- Take single digit number.
+#Logic/operation   :- Use if..elif to print number in word.
+#Output            :- Print digit in word. 
 #file					 :- printNumberInWord.sh
 
 #!/bin/bash -x
