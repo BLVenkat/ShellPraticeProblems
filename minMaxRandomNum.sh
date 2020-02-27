@@ -3,11 +3,8 @@
 for(( i=0;i<5;i++ ))
 do 
 	random=$(( 100+RANDOM%900 ));
-		arr[$i]=$random;
-	
+		arr[$i]=$random;	
 done
-
-echo "before sorting ${arr[@]}";
 
 for(( i=0;i<5;i++ )) 
 do
@@ -21,8 +18,6 @@ do
 		fi
 	done	
 done
-
-echo "after sorting ${arr[@]}";
 echo "the smallest number is ${arr[0]}"
 echo "the largest number is ${arr[4]}"
 
