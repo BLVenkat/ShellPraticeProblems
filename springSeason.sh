@@ -2,16 +2,22 @@
 
 day=$1
 month=$2
-month=${month,,}
-result=false
+space=""
 
-if [[ ( "$month" = "march" && $day -ge 20 && $day -le 31 ) || 
-      ( "$month" = "april" && $day -ge 1 && $day -le 30 ) || 
-      ( "$month" = "may" && $day -ge 1 && $day -le 31 ) || 
-      ( "$month" = "june" && $day -ge 1 && $day -le 20 ) ]]
+if [[ "$month" != "$space" && "$day" != "$spce" ]]
 then
-       result=true
-fi
+      echo "Date: $day-$month"
+      month=${month,,}
+      result=FALSE
 
-echo "Date: $day-$month"
-echo "Reslut is, $result"
+      if [[ ( "$month" = "march" && $day -ge 20 && $day -le 31 ) || 
+            ( "$month" = "april" && $day -ge 1 && $day -le 30 ) || 
+            ( "$month" = "may" && $day -ge 1 && $day -le 31 ) || 
+            ( "$month" = "june" && $day -ge 1 && $day -le 20 ) ]]
+      then
+            result=TRUE
+      fi
+      echo "Reslut is, $result"
+else 
+      echo "Pass CommandLine Arguments"
+fi
