@@ -1,6 +1,6 @@
 #Problem statement		:- Think of a magic Number and ask N number of questions to find it.
-#Output						:- Prints the Magic Number. 
-#file							:- MagicNumber.sh
+#Output				:- Prints the Magic Number. 
+#file				:- MagicNumber.sh
 
 #!/bin/bash -x
 
