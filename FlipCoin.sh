@@ -2,9 +2,14 @@
 #Program on Flip Coin
 head=0;
 tail=1;
+win=11;
+
+#variables
 headWin=0;
 tailWin=0;
-while [[ $headWin -lt 11 && $tailWin -lt 11 ]]
+
+#logic
+while [[ $headWin -lt $win && $tailWin -lt $win ]]
 do
 	random=$(( $RANDOM % 2 ))
 	case $random in 
@@ -16,3 +21,5 @@ do
 			;;
 	esac
 done
+echo "$headWin"
+echo "$tailWin"
