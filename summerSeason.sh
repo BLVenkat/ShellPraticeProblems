@@ -1,3 +1,12 @@
+
+# Problem statement :- Write a program that takes day and month from the command line and prints true 
+#  if day of month is between March 20 and June 20, false otherwise.
+
+# Input :- Take Day and Month as Commandline Argument.
+# Logic/operation   :- Use if else to print True or False.
+# Output            :- Print True or False. 
+# file		  :- summerSeason.sh
+
 #!/bin/bash -x
 
 day=$1
