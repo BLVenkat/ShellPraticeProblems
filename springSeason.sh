@@ -14,4 +14,4 @@ then
 fi
 
 echo "Date: $day-$month"
-echo "Reslut is, $result"/home/bridgelabz/Desktop/springSeason.sh
+echo "Reslut is, $result"
