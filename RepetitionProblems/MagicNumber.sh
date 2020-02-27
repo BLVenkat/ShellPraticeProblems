@@ -19,10 +19,11 @@ while [[ $lowerLimit -lt $upperLimit ]]
 do
 	read -p "Is the number greater than $magicNum? (Y or N) : " isGreaterThanMagicNum
 
-	if [[ $isGreaterThanMagicNum == $YES ]]
+	# comparing ignore case by capitalizing user input
+	if [[ ${isGreaterThanMagicNum^^} == $YES ]]
 	then
 		lowerLimit=$(( $magicNum + 1 ))
-	elif [[ $isGreaterThanMagicNum == $NO ]]
+	elif [[ ${isGreaterThanMagicNum^^} == $NO ]]
 	then
 		upperLimit=$magicNum
 	else
