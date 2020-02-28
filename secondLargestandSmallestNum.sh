@@ -59,7 +59,7 @@ function getSecondLargestAndSmallestNum() {
 
 function getSecondLargestAndSmallestNumBySorting() {
 	for i in "$@"; do
-		arr2[(( counter2++ ))]=$i	
+		arr[(( counter2++ ))]=$i	
 	done
 	for(( i=0;i<$numOfElements;i++ )) 
 	do
