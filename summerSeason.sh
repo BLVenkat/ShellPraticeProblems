@@ -4,8 +4,11 @@
 
 # Input :- Take Day and Month as Commandline Argument.
 # Logic/operation   :- Use if else to check date between March 20 and June 20.
-# Output            :- Print True or False. 
+# Output            :- Print True or False.
 # file		  :- summerSeason.sh
+# Execute :- summerSeason.sh 10 June
+# Output		:-  Date: 10-June
+#			   Result is, TRUE
 
 #!/bin/bash -x
 
