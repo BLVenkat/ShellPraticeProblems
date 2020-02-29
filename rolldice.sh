@@ -24,7 +24,7 @@ function rollTheDice(){
 echo "Enter the number of times you want to roll the dice "
 read n
 echo "You chose to roll $n times"
-while (( diceTimes < $n ))
+while [[ $diceTimes -lt $n ]];
 do
 roll
 done
