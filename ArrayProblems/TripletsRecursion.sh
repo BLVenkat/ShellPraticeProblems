@@ -11,17 +11,17 @@ read -a ARRAY
 FALSE=0
 TRUE=1
 ARRAY_LENGTH=${#ARRAY[@]}
-LAST_INDEX=$(( $ARRAY_LENGTH - 1 ))
-SECOND_LAST_INDEX=$(( $ARRAY_LENGTH - 2 ))
 
 #variables
 startIndex=0
 
+# function for recursive call with third pointer to search through the array
+# params - firstIndex, secondIndex, thirdIndex
 search_third_index() {
 	local firstIndex=$1
 	local secondIndex=$2
 	local thirdIndex=$3 
-	if [[ $thirdIndex -eq $ARRAY_LENGTH ]]	
+	if [[ $thirdIndex -eq $ARRAY_LENGTH ]]										#base condition
 	then
 		return
 	fi
@@ -30,19 +30,22 @@ search_third_index() {
 	local secondElement=${ARRAY[$secondIndex]}
 	local thirdElement=${ARRAY[$thirdIndex]}
 		
+	# condition for checking sum of three elements equals to zero
 	if [[ $(( $firstElement + $secondElement + $thirdElement )) -eq 0 ]]
 	then
 		echo $firstElement $secondElement $thirdElement
 	fi 
 	
 	(( thirdIndex++ ))
-	search_third_index $firstIndex $secondIndex $thirdIndex
+	search_third_index $firstIndex $secondIndex $thirdIndex				#recursive call
 }
 
+# function for recursive call with second pointer to search through the array
+# params - firstIndex, secondIndex, thirdIndex
 search_second_index() {
 	local firstIndex=$1
 	local secondIndex=$2
-	if [[ $secondIndex -eq $(( $ARRAY_LENGTH - 1 )) ]]	
+	if [[ $secondIndex -eq $(( $ARRAY_LENGTH - 1 )) ]]						#base condition
 	then
 		return
 	fi
@@ -51,12 +54,14 @@ search_second_index() {
 	search_third_index $firstIndex $secondIndex $thirdIndex
 	
 	(( secondIndex++ ))
-	search_second_index $firstIndex $secondIndex
+	search_second_index $firstIndex $secondIndex								#recursive call
 }
 
+# function for recursive call with first pointer to search through the array
+# params - firstIndex, secondIndex, thirdIndex
 search_first_index() {
 	local firstIndex=$1
-	if [[ $firstIndex -eq $(( $ARRAY_LENGTH - 2 )) ]]	
+	if [[ $firstIndex -eq $(( $ARRAY_LENGTH - 2 )) ]]						#base condition
 	then
 		return
 	fi
@@ -65,7 +70,8 @@ search_first_index() {
 	search_second_index $firstIndex $secondIndex
 
 	(( firstIndex++ ))
-	search_first_index $firstIndex
+	search_first_index $firstIndex												#recursive call
 }
 
+#main
 search_first_index $startIndex
