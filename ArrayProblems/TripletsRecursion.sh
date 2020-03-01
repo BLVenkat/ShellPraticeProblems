@@ -21,7 +21,7 @@ search_third_index() {
 	local firstIndex=$1
 	local secondIndex=$2
 	local thirdIndex=$3 
-	if [[ $thirdIndex -eq $ARRAY_LENGTH ]]										#base condition
+	if [[ $thirdIndex -eq $ARRAY_LENGTH ]]						#base condition
 	then
 		return
 	fi
@@ -45,7 +45,7 @@ search_third_index() {
 search_second_index() {
 	local firstIndex=$1
 	local secondIndex=$2
-	if [[ $secondIndex -eq $(( $ARRAY_LENGTH - 1 )) ]]						#base condition
+	if [[ $secondIndex -eq $(( $ARRAY_LENGTH - 1 )) ]]				#base condition
 	then
 		return
 	fi
@@ -54,14 +54,14 @@ search_second_index() {
 	search_third_index $firstIndex $secondIndex $thirdIndex
 	
 	(( secondIndex++ ))
-	search_second_index $firstIndex $secondIndex								#recursive call
+	search_second_index $firstIndex $secondIndex					#recursive call
 }
 
 # function for recursive call with first pointer to search through the array
 # params - firstIndex, secondIndex, thirdIndex
 search_first_index() {
 	local firstIndex=$1
-	if [[ $firstIndex -eq $(( $ARRAY_LENGTH - 2 )) ]]						#base condition
+	if [[ $firstIndex -eq $(( $ARRAY_LENGTH - 2 )) ]]				#base condition
 	then
 		return
 	fi
@@ -70,7 +70,7 @@ search_first_index() {
 	search_second_index $firstIndex $secondIndex
 
 	(( firstIndex++ ))
-	search_first_index $firstIndex												#recursive call
+	search_first_index $firstIndex							#recursive call
 }
 
 #main
