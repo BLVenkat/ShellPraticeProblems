@@ -12,7 +12,7 @@ diceTimes=0
 diceMaxOccurence=0;
 diceMinOccurence=1;
 
-function die(){
+function getDiceValue(){
 
 	DIE=1
 	((DIE+=$((RANDOM%6)) ))
@@ -23,12 +23,12 @@ function die(){
 function roll(){
 
 	((diceTimes++))
-	roll=$(die)
+	roll=$(getDiceValue)
 	((Rolls[$roll]++))
 
 }
 
-function TenCheck(){
+function tenCheck(){
 
 	for ((i=1;i<=6 ;i++))
 	do
@@ -61,7 +61,7 @@ function play(){
 	while (( !isTen ))
 	do
 		roll
-		TenCheck
+		tenCheck
 	done
 	display
 
