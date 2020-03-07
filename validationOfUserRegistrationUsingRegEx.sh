@@ -3,7 +3,7 @@
 
 function getFirstName(){
     read -p "Enter First name :" fname
-    fnamePattern="^[A-Z][a-zA-Z]{2,}$"
+    fnamePattern="^[A-Z][a-z]{2,}$"
     if [[ $fname =~ $fnamePattern ]]
     then
         echo "First Name is valid"
@@ -14,7 +14,7 @@ function getFirstName(){
 }
 function getLastName(){
      read -p "Enter Last name :" lname
-     lnamePattern="^[A-Z][a-zA-Z]{2,}$"
+     lnamePattern="^[A-Z][a-z]{2,}$"
      if [[ $lname =~ $lnamePattern ]]
      then
         echo "last Name is valid"
