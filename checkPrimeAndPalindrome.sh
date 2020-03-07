@@ -9,27 +9,32 @@
 # Output             :- Number is Prime and also Palindorme.
 
 
+#CONSTANTS
+ZERO=0
+DIVIDER=10
+ONE=1
+
 #VARIABLES
 isPrime=FALSE
 isPalinDrome=FALSE
 
 function checkIsPrimeOrNot() {
 	i=2
-	status=0
+	status=$ZERO
 	midNum=$(($number/$i))
-	if [[ $number == 0 || $number == 1 ]]
+	if [[ $number == $ZERO || $number == $ONE ]]
 	then
 		isPrime=FALSE
 	else
 	    for (( i=2; i<=$midNum; i++ )) 
 	    do
-            if [ $(($number%$i)) == 0 ] 
+            if [ $(($number%$i)) == $ZERO ] 
             then
-                status=1
+                status=$ONE
 		        break
             fi
 	    done
-	    if [ $status == 0 ]
+	    if [ $status == $ZERO ]
  	    then
 		    isPrime=TRUE
 	    fi
@@ -37,19 +42,17 @@ function checkIsPrimeOrNot() {
 }
 
 function checkIsPalindromeOrNot() {
-   divider=10
    reminder=0
-   zero=0
    reverse=""
    temp=$number
-   if [ $number -eq $zero ]
+   if [ $number -eq $ZERO ]
    then
 		isPalinDrome=TRUE
 	else
-		while [ $temp -gt $zero ] 
+		while [ $temp -gt $ZERO ] 
     	do
-      		reminder=$(( $temp % $divider ))
-      		temp=$(( $temp / $divider ))  
+      		reminder=$(( $temp % $DIVIDER ))
+      		temp=$(( $temp / $DIVIDER ))  
       		reverse=$( echo ${reverse}${reminder} )  
     	done
     	if [ $number -eq $reverse ]
