@@ -28,12 +28,8 @@ do
 		random=$(( RANDOM%2))
 			case $random in 
 				$WIN) ((cash +=BET))
-						((per_day_win +=BET)) 
-						echo "win = $per_day_win"
 						echo "cash in win = $cash" ;;
 				$LOSS) ((cash -=BET))
-							((per_day_loss +=BET))
-						echo "LOSS = $per_day_loss"
 					   echo "cash in loss = $cash" ;;
 				*);;
 			esac
