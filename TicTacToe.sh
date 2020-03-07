@@ -1,5 +1,7 @@
 #!/bin/bash -x
 
+# Welcome to tic tac toe program by Prayas in shell script
+
 declare -A board
 BOARD_ROWS=3
 BOARD_SIZE=$(($BOARD_ROWS*$BOARD_ROWS))
